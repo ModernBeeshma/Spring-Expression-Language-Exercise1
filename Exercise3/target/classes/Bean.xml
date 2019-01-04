@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+<bean id="s1" class="com.exercise3.model.MarkSheet">
+<property name="chemistry" value="155"></property>
+<property name="math" value="185"></property>
+<property name="name" value="Sathish Kumar"></property>
+<property name="physics" value="189"></property>
+</bean>
+<bean id="result" class="com.exercise3.model.Result">
+<property name="result" value="#{s1.math>70 and s1.chemistry>70 and s1.physics>70}"></property>
+<property name="message" value="#{s1.math>70 and s1.chemistry>70 and s1.physics>70?pass:fail}"></property>
+</bean>
+<bean id="pass" class="java.lang.String">
+<constructor-arg>
+<value>Hi! you have passed.</value>
+</constructor-arg>
+</bean>
+<bean id="fail" class="java.lang.String">
+<constructor-arg>
+<value>Hi! you are wasted.</value>
+</constructor-arg>
+</bean>
+</beans>
