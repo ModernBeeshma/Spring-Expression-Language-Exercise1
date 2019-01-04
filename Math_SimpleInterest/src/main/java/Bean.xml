@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+<bean id="si" class="com.mathematicalOperation.model.SimpleInterestBean">
+<property name="principle" value="2000"></property>
+<property name="duration" value="2"></property>
+<property name="rate" value="2.5"></property>
+</bean>
+<bean id="result" class="com.mathematicalOperation.model.Result">
+<property name="simpleInterest" value="#{(si.principle*si.duration+si.rate)/100}"></property>
+</bean>
+</beans>
